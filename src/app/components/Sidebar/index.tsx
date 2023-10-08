@@ -17,7 +17,7 @@ const Sidebar = () => {
 	return (
 		<Stack
 			borderRadius="lg"
-			bg="primary"
+			bg="teritory"
 			py={5}
 			px={4}
 			w={{ base: '200px', md: '300px' }}

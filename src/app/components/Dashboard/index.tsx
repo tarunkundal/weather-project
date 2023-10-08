@@ -5,7 +5,7 @@ import Body from './Body';
 
 const Dashboard = () => {
 	return (
-		<Stack w="100vw" ml={6}>
+		<Stack w="100vw">
 			<Header />
 			<Body />
 		</Stack>

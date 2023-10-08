@@ -33,7 +33,7 @@ const Header = () => {
 			</Flex>
 			<Center>
 				<Grid
-					templateColumns={{ base: 'repeat(2,1fr)', md: 'repeat(7, 1fr)' }}
+					templateColumns={{ base: 'repeat(3,1fr)', md: 'repeat(7, 1fr)' }}
 					gap={{ base: 2, md: 6 }}
 				>
 					{/* <GridItem w="100%"> */}

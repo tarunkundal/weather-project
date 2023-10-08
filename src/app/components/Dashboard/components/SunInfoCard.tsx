@@ -1,6 +1,7 @@
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons';
 import { Box, Flex, Stack, Text } from '@chakra-ui/react';
 import React from 'react';
+import { WiSunrise } from 'react-icons/wi';
 
 const SunInfoCard = () => {
 	return (
@@ -16,23 +17,28 @@ const SunInfoCard = () => {
 			<Text fontSize="1rem" fontWeight="black">
 				Sunrise and Sunset
 			</Text>
-			<Flex>
-				<Box bg="gold" mx={2} rounded="full" alignItems="center" p={2}>
-					<ArrowUpIcon />
-				</Box>
-				<Stack spacing={0}>
-					<Text>5:58am</Text>
-					<Text>-2m 38s</Text>
+			<Flex justifyContent="space-around" alignItems="center">
+				<Stack>
+					<Flex>
+						<Box bg="gold" mx={2} rounded="full" alignItems="center" p={2}>
+							<ArrowUpIcon />
+						</Box>
+						<Stack spacing={0}>
+							<Text>5:58am</Text>
+							<Text>-2m 38s</Text>
+						</Stack>
+					</Flex>
+					<Flex>
+						<Box bg="gold" mx={2} rounded="full" alignItems="center" p={2}>
+							<ArrowDownIcon />
+						</Box>
+						<Stack spacing={0}>
+							<Text>5:58am</Text>
+							<Text>-2m 38s</Text>
+						</Stack>
+					</Flex>
 				</Stack>
-			</Flex>
-			<Flex>
-				<Box bg="gold" mx={2} rounded="full" alignItems="center" p={2}>
-					<ArrowDownIcon />
-				</Box>
-				<Stack spacing={0}>
-					<Text>5:58am</Text>
-					<Text>-2m 38s</Text>
-				</Stack>
+				<WiSunrise size={'120'} color="gold" />
 			</Flex>
 		</Stack>
 	);
