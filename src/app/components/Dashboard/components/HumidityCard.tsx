@@ -13,12 +13,7 @@ const Humidity = () => {
 			<Text fontWeight="bold">Humidity</Text>
 			<Flex justifyContent="space-around" alignItems="center">
 				<Heading>12 </Heading>
-				<Progress
-					orientation="horizontal"
-					value={78}
-					// height="3px"
-					width="full"
-				/>
+				<Progress colorScheme="linkedin" value={42} rounded="2xl" width="50%" />
 			</Flex>
 			<Text fontWeight="bold">
 				Status :{' '}
