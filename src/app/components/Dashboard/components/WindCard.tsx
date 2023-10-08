@@ -4,7 +4,6 @@ import { MdLocationOn } from 'react-icons/md';
 const WindCard = () => {
 	return (
 		<Stack
-			boxSize="30%"
 			h="200px"
 			bg="teritory"
 			p={2}
@@ -20,7 +19,7 @@ const WindCard = () => {
 				</Text>{' '}
 			</Heading>
 			<Flex mx={2} alignItems="center">
-				<Box bg="primary" p={2} rounded="full">
+				<Box bg="gold" p={2} rounded="full">
 					<MdLocationOn color="blue" />{' '}
 				</Box>
 				<Text ml={2} fontSize="14px">

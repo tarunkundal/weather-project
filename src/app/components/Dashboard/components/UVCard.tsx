@@ -10,7 +10,6 @@ import React from 'react';
 const UVCard = () => {
 	return (
 		<Stack
-			boxSize="30%"
 			bg="teritory"
 			p={2}
 			rounded="lg"

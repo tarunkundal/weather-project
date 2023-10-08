@@ -5,7 +5,6 @@ import React from 'react';
 const SunInfoCard = () => {
 	return (
 		<Stack
-			boxSize="30%"
 			bgColor="teritory"
 			p={2}
 			rounded="lg"
@@ -18,7 +17,7 @@ const SunInfoCard = () => {
 				Sunrise and Sunset
 			</Text>
 			<Flex>
-				<Box bg="primary" mx={2} rounded="full" alignItems="center" p={2}>
+				<Box bg="gold" mx={2} rounded="full" alignItems="center" p={2}>
 					<ArrowUpIcon />
 				</Box>
 				<Stack spacing={0}>
@@ -27,7 +26,7 @@ const SunInfoCard = () => {
 				</Stack>
 			</Flex>
 			<Flex>
-				<Box bg="primary" mx={2} rounded="full" alignItems="center" p={2}>
+				<Box bg="gold" mx={2} rounded="full" alignItems="center" p={2}>
 					<ArrowDownIcon />
 				</Box>
 				<Stack spacing={0}>
