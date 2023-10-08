@@ -1,5 +1,20 @@
-import { Center, Flex, Grid, Stack, Switch, Text } from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
+import {
+	Center,
+	Flex,
+	Grid,
+	Heading,
+	Image,
+	Input,
+	InputGroup,
+	InputLeftElement,
+	Stack,
+	Switch,
+	Text,
+} from '@chakra-ui/react';
 import React from 'react';
+import { AiOutlineAntCloud } from 'react-icons/ai';
+import { BsFillCloudRainFill } from 'react-icons/bs';
 import { TbCloudRain } from 'react-icons/tb';
 
 const data = [
@@ -17,17 +32,44 @@ const Header = () => {
 		<Stack>
 			<Flex justifyContent="space-between" alignItems="center">
 				<Stack>
-					<Text>
-						Today{' '}
-						<Text as={'span'} color="blue.400" fontWeight="semibold">
-							Week
-						</Text>
+					<Heading fontWeight="semibold">8:30am</Heading>
+					<Text
+						fontSize={{ base: '14px', md: '18px' }}
+						fontWeight="bold"
+						color="blue.400"
+					>
+						Tuesday, 02 September 2023
 					</Text>
 				</Stack>
+				<InputGroup w={{ base: '', md: '50%' }}>
+					<InputLeftElement>
+						<SearchIcon />
+					</InputLeftElement>
+					<Input border="2px" type="text" placeholder="Search Places" />
+				</InputGroup>
+
 				<Stack>
 					<Flex alignItems="center">
 						<Switch size="md" />
 						°F
+					</Flex>
+				</Stack>
+			</Flex>
+			<Flex mx="auto" alignItems="center">
+				<Heading>32!C</Heading>
+				<Image
+					boxSize={200}
+					src="https://icons-for-free.com/iconfiles/png/512/sun+sunny+weather+icon-1320196635525068067.png"
+					alt="image"
+				/>
+				<Stack ml={2} fontWeight="semibold">
+					<Flex alignItems="center">
+						<AiOutlineAntCloud size="25" color="gray" />
+						<Text ml={4}>Mostly Cloudly</Text>
+					</Flex>
+					<Flex alignItems="center">
+						<BsFillCloudRainFill color="skyblue" size="25" />
+						<Text ml={4}>Rain - 24%</Text>
 					</Flex>
 				</Stack>
 			</Flex>
@@ -36,7 +78,6 @@ const Header = () => {
 					templateColumns={{ base: 'repeat(3,1fr)', md: 'repeat(7, 1fr)' }}
 					gap={{ base: 2, md: 6 }}
 				>
-					{/* <GridItem w="100%"> */}
 					{data.map((data) => {
 						return (
 							<Stack
@@ -59,7 +100,6 @@ const Header = () => {
 							</Stack>
 						);
 					})}
-					{/* </GridItem> */}
 				</Grid>
 			</Center>
 		</Stack>
