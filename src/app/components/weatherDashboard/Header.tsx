@@ -1,5 +1,6 @@
 import { SearchIcon } from '@chakra-ui/icons';
 import {
+	Button,
 	Center,
 	Flex,
 	Grid,
@@ -12,7 +13,7 @@ import {
 	Switch,
 	Text,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineAntCloud } from 'react-icons/ai';
 import { BsFillCloudRainFill } from 'react-icons/bs';
 import { TbCloudRain } from 'react-icons/tb';
@@ -28,6 +29,17 @@ const data = [
 ];
 
 const Header = () => {
+	const [enteredCity, setEnteredCity] = useState('');
+	const handleSubmit = async (e: { preventDefault: () => void }) => {
+		e.preventDefault();
+		console.log(enteredCity);
+		const res = await fetch(
+			`http://api.openweathermap.org/data/2.5/forecast?q=${enteredCity}&appid=0726f052569f3c36606b48c894e7068c`
+		);
+		const result = await res.json();
+		console.log(result);
+	};
+
 	return (
 		<Stack>
 			<Flex justifyContent="space-between" alignItems="center">
@@ -41,12 +53,31 @@ const Header = () => {
 						Tuesday, 02 September 2023
 					</Text>
 				</Stack>
-				<InputGroup w={{ base: '', md: '50%' }}>
-					<InputLeftElement>
-						<SearchIcon />
-					</InputLeftElement>
-					<Input border="2px" type="text" placeholder="Search Places" />
-				</InputGroup>
+
+				<form onSubmit={handleSubmit} style={{ width: '50%' }}>
+					<InputGroup>
+						<InputLeftElement>
+							<SearchIcon />
+						</InputLeftElement>
+						<Input
+							border="2px"
+							value={enteredCity}
+							onChange={(e) => setEnteredCity(e.target.value)}
+							type="text"
+							placeholder="Search Places"
+						/>
+						<Button
+							variant="ghost"
+							colorScheme="linkedin"
+							size="sm"
+							ml={1}
+							my="auto"
+							type="submit"
+						>
+							<SearchIcon color="blue" />
+						</Button>
+					</InputGroup>
+				</form>
 
 				<Stack>
 					<Flex alignItems="center">
@@ -107,3 +138,10 @@ const Header = () => {
 };
 
 export default Header;
+
+// 0726f052569f3c36606b48c894e7068c
+// http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
+// api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+// api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+// api.openweathermap.org/data/2.5/forecast?q={city name},{country code}&appid={API key}
+// api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid={API key}
