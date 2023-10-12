@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react';
-import Dashboard from './app/components/weatherDashboard';
+import Dashboard from './app/weatherDashboard';
 
 const App = () => {
 	return (
